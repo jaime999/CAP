@@ -1,0 +1,25 @@
+#!/bin/bash
+
+while getopts 'an:f:s:' opt; do
+        case "$opt" in
+                s)
+                        state=${OPTARG}
+                        ;;
+                a)
+                        output=9
+                        ;;
+                n)
+                        output=${OPTARG}
+                        ;;
+                :)
+                        echo "This option requires an argument"
+                        exit 1
+                        ;;
+                ?|h)
+                        echo "Usage: $0 [-s state] [-a] | [-n outlet]"
+                        exit 1
+                        ;;
+        esac
+done
+
+{ printf "practica\ncos\n1\n${output}\n${state}\nyes\n\n\033\0334\n"; } | telnet 158.42.181.26
