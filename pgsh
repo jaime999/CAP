@@ -1,0 +1,1 @@
+for i in `seq $1 $2`; do echo cac$i ; ssh cac$i $3 ; done
