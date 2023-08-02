@@ -1,0 +1,8 @@
+universe = vanilla
+executable = intsin
+
+log=intsin.log
+error=intsin.error
+input=in.$(Process)
+output=out.$(Process)
+queue 50
